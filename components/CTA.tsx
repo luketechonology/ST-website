@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function CTA() {
     return (
@@ -16,12 +17,16 @@ export default function CTA() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                    <Button size="lg" className="bg-white text-brand-red hover:bg-gray-100 shadow-lg text-lg px-10">
-                        预约专属演示
-                    </Button>
-                    <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-10">
-                        获取建设方案
-                    </Button>
+                    <Link href="/demo">
+                        <Button size="lg" className="bg-white text-brand-red hover:bg-gray-100 shadow-lg text-lg px-10 w-full sm:w-auto">
+                            预约专属演示
+                        </Button>
+                    </Link>
+                    <Link href="/solution-plan">
+                        <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-10 w-full sm:w-auto">
+                            获取建设方案
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>

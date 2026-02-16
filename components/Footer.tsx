@@ -17,7 +17,7 @@ export default function Footer() {
                     </div>
 
                     <div className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} 圣唐科技 Education Technology. All rights reserved.
+                        © {new Date().getFullYear()} 圣唐科技 Sheng Tang Science&Technology Co.,Ltd. All rights reserved.
                     </div>
                 </div>
             </div>

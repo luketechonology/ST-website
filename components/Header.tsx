@@ -5,16 +5,17 @@ import { Menu } from "lucide-react";
 
 export default function Header() {
     return (
-        <header className="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
+        <header className="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_-10px_rgba(212,175,55,0.1)]">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2">
-                    {/* Logo - assuming file is public/logo.png. Adjust width/height as needed */}
-                    <div className="relative w-8 h-8 md:w-10 md:h-10">
-                        <Image src="/logo.png" alt="圣唐科技" fill className="object-contain" />
+                <Link href="/" className="flex items-center gap-3">
+                    <div className="flex flex-col">
+                        <span className="text-xl md:text-3xl font-bold font-serif tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-[#FFD700] via-[#D4AF37] to-[#AA8A2E]">
+                            圣唐科技
+                        </span>
+                        <span className="text-[0.5rem] md:text-[0.65rem] text-[#D4AF37] font-serif tracking-[0.15em] uppercase opacity-80">
+                            SHENG TANG SCIENCE & TECHNOLOGY
+                        </span>
                     </div>
-                    <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
-                        圣唐科技
-                    </span>
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
@@ -25,9 +26,11 @@ export default function Header() {
                 </nav>
 
                 <div className="flex items-center gap-4">
-                    <button className="hidden md:block px-4 py-2 text-sm font-medium text-brand-gold border border-brand-gold/30 rounded hover:bg-brand-gold/10 transition-colors">
-                        申请演示
-                    </button>
+                    <Link href="/demo">
+                        <button className="hidden md:block px-4 py-2 text-sm font-medium text-brand-gold border border-brand-gold/30 rounded hover:bg-brand-gold/10 transition-colors">
+                            申请演示
+                        </button>
+                    </Link>
                     <button className="md:hidden text-white">
                         <Menu className="w-6 h-6" />
                     </button>

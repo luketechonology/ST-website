@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck, Server, Activity } from "lucide-react";
 
 export default function Hero() {
@@ -6,6 +7,7 @@ export default function Hero() {
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-dark">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-red/20 via-brand-dark to-brand-dark"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[100px] animate-pulse-glow pointer-events-none"></div>
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div> {/* We might not have grid.svg yet, but acts as placeholder */}
 
             <div className="container mx-auto px-4 relative z-10 text-center">
@@ -28,12 +30,16 @@ export default function Hero() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                    <Button size="lg" className="w-full sm:w-auto text-lg shadow-[0_0_30px_rgba(186,28,28,0.3)]">
-                        申请系统演示 <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg">
-                        获取建设方案
-                    </Button>
+                    <Link href="/demo" className="w-full sm:w-auto">
+                        <Button variant="primary" size="lg" className="w-full text-lg hover:animate-pulse">
+                            申请系统演示 <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                    </Link>
+                    <Link href="/solution-plan" className="w-full sm:w-auto">
+                        <Button variant="tech" size="lg" className="w-full text-lg">
+                            获取建设方案
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-gray-400 text-sm border-t border-white/10 pt-8">

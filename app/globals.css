@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+
   --color-brand-red: #8B0000;
   --color-brand-red-light: #B22222;
   --color-brand-gold: #D4AF37;
@@ -33,8 +33,26 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .bg-gradient-red {
     background: linear-gradient(180deg, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 0.1;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    }
+
+    50% {
+      opacity: 0.3;
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }

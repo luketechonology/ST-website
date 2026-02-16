@@ -18,7 +18,7 @@ export default function Solution() {
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-20">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        TangThink <span className="text-brand-gold">AI考试体系</span> 整体架构
+                        圣唐科技 <span className="text-brand-gold">AI考试体系</span> 整体架构
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         我们不是做一个在线考试系统，而是为学校构建完整的智能考试体系。

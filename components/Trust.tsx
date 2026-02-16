@@ -61,7 +61,7 @@ export default function Trust() {
                         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-30"></div>
                         <div className="text-center relative z-10">
                             <span className="text-6xl font-bold text-white opacity-10">TRUST</span>
-                            <div className="text-2xl font-bold text-white mt-[-20px]">TangThink Confidence</div>
+                            <div className="text-2xl font-bold text-white mt-[-20px]">圣唐科技 Confidence</div>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from "@/components/ui/Button";
 import { Menu } from "lucide-react";
 
@@ -7,8 +8,12 @@ export default function Header() {
         <header className="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
-                    <span className="text-2xl font-bold bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
-                        TangThink
+                    {/* Logo - assuming file is public/logo.png. Adjust width/height as needed */}
+                    <div className="relative w-8 h-8 md:w-10 md:h-10">
+                        <Image src="/logo.png" alt="圣唐科技" fill className="object-contain" />
+                    </div>
+                    <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
+                        圣唐科技
                     </span>
                 </Link>
 

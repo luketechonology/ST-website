@@ -52,3 +52,25 @@ export function saveSolutionData(data: any) {
     currentData.push(data);
     fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
 }
+
+export function getPrivacyContent() {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'privacy.json');
+    if (!fs.existsSync(filePath)) {
+        // Return default content if file doesn't exist
+        return null;
+    }
+    const fileData = fs.readFileSync(filePath, 'utf-8');
+    try {
+        const json = JSON.parse(fileData);
+        return json.content;
+    } catch (e) {
+        return null;
+    }
+}
+
+export function savePrivacyContent(content: string) {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'privacy.json');
+    fs.writeFileSync(filePath, JSON.stringify({ content }, null, 2));
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "9ee85c81-8888-4698-b8d2-e8ed6b4da304",
+    "grade": "A",
+    "school": "东南大学",
+    "job_title": "校长",
+    "name": "唐明",
+    "phone": "18701319280",
+    "type": "university",
+    "size": ">8000",
+    "has_system": "no",
+    "has_server_room": "yes",
+    "goals": [
+      "提升命题效率",
+      "降低阅卷成本",
+      "构建学情数据体系",
+      "建设标准化题库",
+      "打造区域示范校"
+    ],
+    "background": "",
+    "createdAt": "2026-02-17T01:17:12.012Z"
+  }
+]

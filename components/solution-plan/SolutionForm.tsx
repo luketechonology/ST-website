@@ -54,7 +54,7 @@ export default function SolutionForm() {
                 </p>
                 <div className="bg-blue-50 p-6 rounded-lg inline-block text-left">
                     <p className="text-sm text-blue-600 font-bold mb-2">如项目较紧急，请直接联系：</p>
-                    <p className="text-2xl font-bold text-slate-800">400-XXXX-XXX</p>
+                    <p className="text-2xl font-bold text-slate-800">(+86) 18701319280</p>
                 </div>
                 <div className="mt-8">
                     <Button variant="outline" onClick={() => window.location.href = '/'}>

@@ -1,16 +1,18 @@
 import { NextResponse } from 'next/server';
+import { saveDemoData } from '@/lib/db';
+import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
 
-        // Log the data (Mocking database save / email sending)
-        console.log('--- New Demo Request ---');
-        console.log(body);
-        console.log('------------------------');
+        const newEntry = {
+            id: uuidv4(),
+            ...body,
+            createdAt: new Date().toISOString()
+        };
 
-        // Simulate processing delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        saveDemoData(newEntry);
 
         return NextResponse.json(
             { message: 'Demo request received successfully' },

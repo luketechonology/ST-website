@@ -44,7 +44,7 @@ export default function DemoForm() {
                 <h3 className="text-2xl font-bold text-white mb-4">您的演示申请已提交成功</h3>
                 <p className="text-gray-400 mb-8">
                     专属顾问将在24小时内与您联系<br />
-                    如需紧急咨询，请拨打：<span className="text-brand-gold font-bold">400-XXXX-XXX</span>
+                    如需紧急咨询，请拨打：<span className="text-brand-gold font-bold">(+86) 18701319280</span>
                 </p>
                 <Button variant="outline" onClick={() => window.location.href = '/'}>
                     返回首页

@@ -1,23 +1,24 @@
 import { NextResponse } from 'next/server';
+import { saveSolutionData } from '@/lib/db';
+import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-
-        // Log the data (Mocking CRM integration / email sending)
-        console.log('--- New Solution Plan Request ---');
-        console.log(body);
 
         // Simple logic to determine "lead grade" (Mock)
         let grade = 'C';
         if (body.size === '>8000' || body.size === '3000-8000') grade = 'B';
         if (body.has_server_room === 'yes' && (body.size === '>8000' || body.type === 'university')) grade = 'A';
 
-        console.log(`Lead Grade: ${grade}`);
-        console.log('---------------------------------');
+        const newEntry = {
+            id: uuidv4(),
+            grade,
+            ...body,
+            createdAt: new Date().toISOString()
+        };
 
-        // Simulate processing delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        saveSolutionData(newEntry);
 
         return NextResponse.json(
             { message: 'Solution request received successfully', grade },

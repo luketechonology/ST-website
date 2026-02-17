@@ -26,10 +26,13 @@ export default function Header() {
                 </nav>
 
                 <div className="flex items-center gap-4">
+                    <Link href="/admin/login" className="text-gray-400 hover:text-white transition-colors text-sm mr-4">
+                        管理端
+                    </Link>
                     <Link href="/demo">
-                        <button className="hidden md:block px-4 py-2 text-sm font-medium text-brand-gold border border-brand-gold/30 rounded hover:bg-brand-gold/10 transition-colors">
+                        <Button variant="primary" className="bg-brand-gold text-black hover:bg-brand-gold-light font-bold">
                             申请演示
-                        </button>
+                        </Button>
                     </Link>
                     <button className="md:hidden text-white">
                         <Menu className="w-6 h-6" />

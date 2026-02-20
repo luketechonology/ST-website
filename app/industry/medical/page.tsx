@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import DemoForm from "@/components/demo/DemoForm";
 
 /* ─── Animated Counter ─── */
 function AnimatedNumber({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -203,9 +204,9 @@ export default function MedicalPage() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-4">
-                        <Link href="/demo" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all hover:-translate-y-0.5">
+                        <a href="#demo" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all hover:-translate-y-0.5">
                             预约演示
-                        </Link>
+                        </a>
                         <a href="#scenarios" className="px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
                             了解解决方案
                         </a>
@@ -426,22 +427,19 @@ export default function MedicalPage() {
             </section>
 
             {/* ═══ CTA ═══ */}
-            <section className="relative py-24">
+            <section id="demo" className="relative py-24">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-brand-blue/25 via-brand-purple/10 to-transparent"></div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                        开启医疗AI智能化之旅
-                    </h2>
-                    <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                        让AI成为医疗机构提升诊疗质量的核心引擎
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-4">
-                        <Link href="/demo" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2">
-                            预约专属演示 <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <Link href="/demo" className="px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
-                            获取建设方案
-                        </Link>
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="text-center mb-10">
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                                开启医疗AI智能化之旅
+                            </h2>
+                            <p className="text-gray-400 text-lg">
+                                让AI成为医疗机构提升诊疗质量的核心引擎
+                            </p>
+                        </div>
+                        <DemoForm industry="医疗" />
                     </div>
                 </div>
             </section>

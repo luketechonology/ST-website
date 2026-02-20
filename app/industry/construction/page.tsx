@@ -252,9 +252,9 @@ export default function ConstructionPage() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-4">
-                        <Link href="/demo" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all hover:-translate-y-0.5">
+                        <a href="#demo" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all hover:-translate-y-0.5">
                             预约演示
-                        </Link>
+                        </a>
                         <a href="#scenarios" className="px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
                             了解解决方案
                         </a>
@@ -557,7 +557,7 @@ export default function ConstructionPage() {
             </section>
 
             {/* ═══ CTA ═══ */}
-            <section className="relative py-24">
+            <section id="demo" className="relative py-24">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-900/25 via-orange-900/10 to-transparent"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-3xl mx-auto">

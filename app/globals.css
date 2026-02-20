@@ -11,31 +11,35 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-brand-red: #8B0000;
-  --color-brand-red-light: #B22222;
-  --color-brand-gold: #D4AF37;
-  --color-brand-gold-light: #FFD700;
+  --color-brand-blue: #2979FF;
+  --color-brand-purple: #D500F9;
+  --color-brand-pink: #F50057;
   --color-brand-dark: #050505;
   --color-brand-gray: #1a1a1a;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #003366, #000000);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #D4AF37 100%);
+  .text-gradient-gemini {
+    background: linear-gradient(to right, #2979FF, #D500F9, #F50057);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-gradient-red {
-    background: linear-gradient(180deg, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
+  .bg-gradient-gemini {
+    background: linear-gradient(to right, #2979FF, #D500F9, #F50057);
+  }
+
+  .bg-gradient-subtle {
+    background: linear-gradient(180deg, rgba(41, 121, 255, 0.1) 0%, rgba(213, 0, 249, 0.05) 100%);
   }
 
   @keyframes pulse-glow {
@@ -43,12 +47,12 @@ body {
     0%,
     100% {
       opacity: 0.1;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+      box-shadow: 0 0 20px rgba(41, 121, 255, 0.1);
     }
 
     50% {
       opacity: 0.3;
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 0 40px rgba(213, 0, 249, 0.3);
     }
   }
 

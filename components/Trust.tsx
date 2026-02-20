@@ -19,20 +19,20 @@ export default function Trust() {
     ];
 
     return (
-        <section id="trust" className="py-24 bg-gradient-to-b from-brand-dark to-black">
+        <section id="trust" className="py-24 relative">
             <div className="container mx-auto px-4">
 
                 {/* Results */}
                 <div className="mb-24">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">实际应用效果</h2>
-                        <p className="text-brand-gold text-xl font-medium">不只是系统升级，而是考试体系升级。</p>
+                        <p className="text-brand-blue text-xl font-medium">不只是系统升级，而是考试体系升级。</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {results.map((item, index) => (
                             <div key={index} className="text-center p-6 bg-white/5 rounded-lg border border-white/10">
-                                <div className="text-4xl md:text-5xl font-bold text-brand-red-light mb-2">{item.value}</div>
+                                <div className="text-4xl md:text-5xl font-bold text-brand-pink mb-2">{item.value}</div>
                                 <div className="text-gray-400">{item.label}</div>
                             </div>
                         ))}
@@ -49,15 +49,15 @@ export default function Trust() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                             {reasons.map((reason, index) => (
                                 <div key={index} className="flex items-center gap-3 text-gray-300">
-                                    <div className="w-5 h-5 rounded-full bg-brand-gold/20 flex items-center justify-center flex-shrink-0">
-                                        <Check className="w-3 h-3 text-brand-gold" />
+                                    <div className="w-5 h-5 rounded-full bg-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                        <Check className="w-3 h-3 text-brand-purple" />
                                     </div>
                                     {reason}
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="bg-gradient-to-br from-brand-red/20 to-brand-dark p-8 rounded-2xl border border-brand-red/30 relative overflow-hidden h-64 flex items-center justify-center">
+                    <div className="bg-gradient-to-br from-brand-blue/20 to-brand-dark p-8 rounded-2xl border border-brand-blue/30 relative overflow-hidden h-64 flex items-center justify-center">
                         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-30"></div>
                         <div className="text-center relative z-10">
                             <span className="text-6xl font-bold text-white opacity-10">TRUST</span>

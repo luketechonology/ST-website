@@ -13,14 +13,14 @@ export const Button: React.FC<ButtonProps> = ({
     children,
     ...props
 }) => {
-    const baseStyles = "inline-flex items-center justify-center rounded transition-all font-medium focus:outline-none focus:ring-2 focus:ring-brand-gold/50 disabled:opacity-50 disabled:cursor-not-allowed";
+    const baseStyles = "inline-flex items-center justify-center rounded transition-all font-medium focus:outline-none focus:ring-2 focus:ring-brand-blue/50 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
-        primary: "bg-gradient-to-r from-brand-red to-brand-red-light text-white hover:shadow-[0_0_20px_rgba(186,28,28,0.6)] border border-brand-red/50 relative overflow-hidden group",
-        secondary: "bg-brand-gold text-brand-dark hover:bg-brand-gold-light hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] font-bold",
-        outline: "border border-brand-gold text-brand-gold hover:bg-brand-gold/10 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]",
+        primary: "bg-gradient-to-r from-brand-blue to-brand-purple text-white hover:shadow-[0_0_20px_rgba(41,121,255,0.6)] border border-brand-blue/50 relative overflow-hidden group",
+        secondary: "bg-white text-brand-purple hover:bg-gray-100 hover:shadow-[0_0_20px_rgba(213,0,249,0.3)] font-bold",
+        outline: "border border-brand-purple text-brand-purple hover:bg-brand-purple/10 hover:shadow-[0_0_15px_rgba(213,0,249,0.3)]",
         ghost: "text-gray-300 hover:text-white hover:bg-white/5",
-        tech: "bg-black/50 text-brand-gold border border-brand-gold/50 hover:bg-brand-gold/10 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:border-brand-gold transition-all duration-300 backdrop-blur-sm",
+        tech: "bg-black/50 text-brand-blue border border-brand-blue/50 hover:bg-brand-blue/10 hover:shadow-[0_0_15px_rgba(41,121,255,0.5)] hover:border-brand-blue transition-all duration-300 backdrop-blur-sm",
     };
 
     const sizes = {

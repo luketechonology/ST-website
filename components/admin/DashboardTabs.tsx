@@ -124,6 +124,7 @@ export default function DashboardTabs() {
                                     {activeTab === 'demo' ? (
                                         <>
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">时间</th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">来源行业</th>
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">学校</th>
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">联系人</th>
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">电话</th>
@@ -147,6 +148,17 @@ export default function DashboardTabs() {
                                     data.demo.map((item: any) => (
                                         <tr key={item.id} className="hover:bg-slate-50">
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{formatDate(item.createdAt)}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${item.industry === '建筑工程' ? 'bg-amber-100 text-amber-800' :
+                                                    item.industry === '采矿工程' ? 'bg-emerald-100 text-emerald-800' :
+                                                        item.industry === '审计' ? 'bg-blue-100 text-blue-800' :
+                                                            item.industry === '教育' ? 'bg-purple-100 text-purple-800' :
+                                                                item.industry === '医疗' ? 'bg-rose-100 text-rose-800' :
+                                                                    'bg-gray-100 text-gray-800'
+                                                    }`}>
+                                                    {item.industry || '通用'}
+                                                </span>
+                                            </td>
                                             <td className="px-6 py-4 whitespace-nowrap font-medium">{item.school}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{item.phone}</td>
@@ -176,7 +188,7 @@ export default function DashboardTabs() {
                                 )}
                                 {((activeTab === 'demo' && data.demo.length === 0) || (activeTab === 'solution' && data.solution.length === 0)) && (
                                     <tr>
-                                        <td colSpan={6} className="px-6 py-8 text-center text-slate-400">暂无数据</td>
+                                        <td colSpan={7} className="px-6 py-8 text-center text-slate-400">暂无数据</td>
                                     </tr>
                                 )}
                             </tbody>
@@ -184,6 +196,6 @@ export default function DashboardTabs() {
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 }

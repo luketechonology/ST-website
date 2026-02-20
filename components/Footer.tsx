@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-black py-12 border-t border-white/10">
+        <footer className="py-12 border-t border-white/10">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="text-center md:text-left">
@@ -13,7 +13,7 @@ export default function Footer() {
                     </div>
 
                     <div className="flex gap-8 text-sm text-gray-400">
-                        <Link href="/privacy" className="hover:text-brand-gold transition-colors">隐私政策</Link>
+                        <Link href="/privacy" className="hover:text-brand-blue transition-colors">隐私政策</Link>
                     </div>
 
                     <div className="text-gray-500 text-sm">

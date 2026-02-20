@@ -69,18 +69,18 @@ export default function SolutionForm() {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 max-w-4xl mx-auto">
             <div className="bg-slate-50 border-b border-slate-200 p-6">
                 <div className="flex items-center justify-between max-w-2xl mx-auto">
-                    <div className={`flex flex-col items-center ${step >= 1 ? 'text-blue-600' : 'text-slate-400'}`}>
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mb-2 ${step >= 1 ? 'bg-blue-100' : 'bg-slate-200'}`}>1</div>
+                    <div className={`flex flex-col items-center ${step >= 1 ? 'text-brand-blue' : 'text-slate-400'}`}>
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mb-2 ${step >= 1 ? 'bg-brand-blue/10' : 'bg-slate-200'}`}>1</div>
                         <span className="text-sm font-medium">基本信息</span>
                     </div>
-                    <div className={`flex-1 h-1 mx-4 ${step >= 2 ? 'bg-blue-600' : 'bg-slate-200'}`}></div>
-                    <div className={`flex flex-col items-center ${step >= 2 ? 'text-blue-600' : 'text-slate-400'}`}>
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mb-2 ${step >= 2 ? 'bg-blue-100' : 'bg-slate-200'}`}>2</div>
+                    <div className={`flex-1 h-1 mx-4 ${step >= 2 ? 'bg-brand-blue' : 'bg-slate-200'}`}></div>
+                    <div className={`flex flex-col items-center ${step >= 2 ? 'text-brand-blue' : 'text-slate-400'}`}>
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mb-2 ${step >= 2 ? 'bg-brand-blue/10' : 'bg-slate-200'}`}>2</div>
                         <span className="text-sm font-medium">学校现状</span>
                     </div>
-                    <div className={`flex-1 h-1 mx-4 ${step >= 3 ? 'text-blue-600' : 'text-slate-400'}`}></div>{/* Logic error in line color but keeping simple */}
-                    <div className={`flex flex-col items-center ${step >= 3 ? 'text-blue-600' : 'text-slate-400'}`}>
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mb-2 ${step >= 3 ? 'bg-blue-100' : 'bg-slate-200'}`}>3</div>
+                    <div className={`flex-1 h-1 mx-4 ${step >= 3 ? 'text-brand-blue' : 'text-slate-400'}`}></div>{/* Logic error in line color but keeping simple */}
+                    <div className={`flex flex-col items-center ${step >= 3 ? 'text-brand-blue' : 'text-slate-400'}`}>
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mb-2 ${step >= 3 ? 'bg-brand-blue/10' : 'bg-slate-200'}`}>3</div>
                         <span className="text-sm font-medium">建设目标</span>
                     </div>
                 </div>
@@ -90,40 +90,40 @@ export default function SolutionForm() {
                 {/* Step 1: Basic Info */}
                 <div className={step === 1 ? 'block' : 'hidden'}>
                     <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-blue-600" /> 基本信息
+                        <FileText className="w-5 h-5 text-brand-blue" /> 基本信息
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label className="block text-slate-600 text-sm font-semibold mb-2">学校名称 <span className="text-red-500">*</span></label>
-                            <input name="school" required type="text" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="请输入学校全称" />
+                            <label className="block text-slate-600 text-sm font-semibold mb-2">学校名称 <span className="text-brand-pink">*</span></label>
+                            <input name="school" required type="text" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue" placeholder="请输入学校全称" />
                         </div>
                         <div>
-                            <label className="block text-slate-600 text-sm font-semibold mb-2">职务 <span className="text-red-500">*</span></label>
-                            <input name="job_title" required type="text" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="如：校长、教务主任" />
+                            <label className="block text-slate-600 text-sm font-semibold mb-2">职务 <span className="text-brand-pink">*</span></label>
+                            <input name="job_title" required type="text" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue" placeholder="如：校长、教务主任" />
                         </div>
                         <div>
-                            <label className="block text-slate-600 text-sm font-semibold mb-2">联系人姓名 <span className="text-red-500">*</span></label>
-                            <input name="name" required type="text" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="您的姓名" />
+                            <label className="block text-slate-600 text-sm font-semibold mb-2">联系人姓名 <span className="text-brand-pink">*</span></label>
+                            <input name="name" required type="text" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue" placeholder="您的姓名" />
                         </div>
                         <div>
-                            <label className="block text-slate-600 text-sm font-semibold mb-2">联系电话 <span className="text-red-500">*</span></label>
-                            <input name="phone" required type="tel" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="手机号码" />
+                            <label className="block text-slate-600 text-sm font-semibold mb-2">联系电话 <span className="text-brand-pink">*</span></label>
+                            <input name="phone" required type="tel" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue" placeholder="手机号码" />
                         </div>
                     </div>
                     <div className="mt-8 flex justify-end text-black">
-                        <Button type="button" onClick={() => setStep(2)} variant="primary" className="bg-blue-600 hover:bg-blue-700 text-white">下一步</Button>
+                        <Button type="button" onClick={() => setStep(2)} variant="primary" className="bg-brand-blue hover:bg-brand-blue/90 text-white">下一步</Button>
                     </div>
                 </div>
 
                 {/* Step 2: School Status */}
                 <div className={step === 2 ? 'block' : 'hidden'}>
                     <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                        <Building className="w-5 h-5 text-blue-600" /> 学校现状
+                        <Building className="w-5 h-5 text-brand-blue" /> 学校现状
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-slate-600 text-sm font-semibold mb-2">学校类型</label>
-                            <select name="type" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white">
+                            <select name="type" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue bg-white">
                                 <option value="k12">中小学</option>
                                 <option value="vocational">职业院校</option>
                                 <option value="university">高校</option>
@@ -132,7 +132,7 @@ export default function SolutionForm() {
                         </div>
                         <div>
                             <label className="block text-slate-600 text-sm font-semibold mb-2">在校人数规模</label>
-                            <select name="size" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white">
+                            <select name="size" className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue bg-white">
                                 <option value="<1000">1000人以下</option>
                                 <option value="1000-3000">1000-3000人</option>
                                 <option value="3000-8000">3000-8000人</option>
@@ -143,10 +143,10 @@ export default function SolutionForm() {
                             <label className="block text-slate-600 text-sm font-semibold mb-2">当前是否已有考试系统</label>
                             <div className="flex gap-6 mt-2">
                                 <label className="flex items-center gap-2">
-                                    <input type="radio" name="has_system" value="yes" className="w-4 h-4 text-blue-600" /> <span>是</span>
+                                    <input type="radio" name="has_system" value="yes" className="w-4 h-4 text-brand-blue" /> <span>是</span>
                                 </label>
                                 <label className="flex items-center gap-2">
-                                    <input type="radio" name="has_system" value="no" defaultChecked className="w-4 h-4 text-blue-600" /> <span>否</span>
+                                    <input type="radio" name="has_system" value="no" defaultChecked className="w-4 h-4 text-brand-blue" /> <span>否</span>
                                 </label>
                             </div>
                         </div>
@@ -154,24 +154,24 @@ export default function SolutionForm() {
                             <label className="block text-slate-600 text-sm font-semibold mb-2">是否有独立机房</label>
                             <div className="flex gap-6 mt-2">
                                 <label className="flex items-center gap-2">
-                                    <input type="radio" name="has_server_room" value="yes" className="w-4 h-4 text-blue-600" /> <span>是</span>
+                                    <input type="radio" name="has_server_room" value="yes" className="w-4 h-4 text-brand-blue" /> <span>是</span>
                                 </label>
                                 <label className="flex items-center gap-2">
-                                    <input type="radio" name="has_server_room" value="no" defaultChecked className="w-4 h-4 text-blue-600" /> <span>否</span>
+                                    <input type="radio" name="has_server_room" value="no" defaultChecked className="w-4 h-4 text-brand-blue" /> <span>否</span>
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div className="mt-8 flex justify-between text-black">
                         <Button type="button" variant="outline" onClick={() => setStep(1)}>上一步</Button>
-                        <Button type="button" onClick={() => setStep(3)} variant="primary" className="bg-blue-600 hover:bg-blue-700 text-white">下一步</Button>
+                        <Button type="button" onClick={() => setStep(3)} variant="primary" className="bg-brand-blue hover:bg-brand-blue/90 text-white">下一步</Button>
                     </div>
                 </div>
 
                 {/* Step 3: Goals */}
                 <div className={step === 3 ? 'block' : 'hidden'}>
                     <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                        <Target className="w-5 h-5 text-blue-600" /> 建设目标
+                        <Target className="w-5 h-5 text-brand-blue" /> 建设目标
                     </h3>
 
                     <div className="mb-6">
@@ -179,7 +179,7 @@ export default function SolutionForm() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {['提升命题效率', '降低阅卷成本', '构建学情数据体系', '建设标准化题库', '打造区域示范校', '其他需求'].map((goal) => (
                                 <label key={goal} className="flex items-center gap-3 p-3 border border-slate-200 rounded hover:bg-slate-50 cursor-pointer">
-                                    <input type="checkbox" name="goals" value={goal} className="w-5 h-5 text-blue-600 rounded" />
+                                    <input type="checkbox" name="goals" value={goal} className="w-5 h-5 text-brand-blue rounded" />
                                     <span className="text-slate-700">{goal}</span>
                                 </label>
                             ))}
@@ -191,7 +191,7 @@ export default function SolutionForm() {
                         <textarea
                             name="background"
                             rows={4}
-                            className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                            className="w-full border border-slate-300 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
                             placeholder="请简要描述您的项目背景或特殊需求..."
                         ></textarea>
                     </div>
@@ -202,7 +202,7 @@ export default function SolutionForm() {
                             type="submit"
                             variant="primary"
                             size="lg"
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 shadow-lg hover:shadow-blue-500/30"
+                            className="bg-brand-blue hover:bg-brand-blue/90 text-white font-bold px-8 shadow-lg hover:shadow-brand-blue/30"
                             disabled={loading}
                         >
                             {loading ? (

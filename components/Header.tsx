@@ -9,14 +9,9 @@ export default function Header() {
         <header className="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_-10px_rgba(41,121,255,0.1)]">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3">
-                    <div className="flex flex-col">
-                        <span className="text-xl md:text-3xl font-bold font-serif tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#2979FF] via-[#D500F9] to-[#F50057]">
-                            圣唐科技
-                        </span>
-                        <span className="text-[0.5rem] md:text-[0.65rem] text-[#D500F9] font-serif tracking-[0.15em] uppercase opacity-80">
-                            SHENG TANG SCIENCE & TECHNOLOGY
-                        </span>
-                    </div>
+                    <span className="text-2xl md:text-4xl font-bold font-serif tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#2979FF] via-[#D500F9] to-[#F50057]">
+                        北京圣唐科技有限公司
+                    </span>
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
@@ -49,6 +44,7 @@ export default function Header() {
                         </div>
                     </div>
 
+                    <Link href="/overseas" className="hover:text-white transition-colors">出海服务（北美市场）</Link>
 
                 </nav>
 

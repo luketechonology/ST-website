@@ -5,9 +5,9 @@ const methodologies = [
         icon: Target,
         title: "精准定位",
         subtitle: "回归业务价值原点",
-        color: "text-red-500",
-        bg: "bg-red-500/10",
-        border: "border-red-500/20",
+        color: "text-blue-500",
+        bg: "bg-blue-500/10",
+        border: "border-blue-500/20",
         points: [
             {
                 label: "痛点切入",
@@ -27,9 +27,9 @@ const methodologies = [
         icon: Repeat,
         title: "快速迭代",
         subtitle: "聚焦价值验证闭环",
-        color: "text-orange-500",
-        bg: "bg-orange-500/10",
-        border: "border-orange-500/20",
+        color: "text-violet-500",
+        bg: "bg-violet-500/10",
+        border: "border-violet-500/20",
         points: [
             {
                 label: "从工具化到场景化演进",
@@ -49,9 +49,9 @@ const methodologies = [
         icon: TrendingUp,
         title: "持续运营",
         subtitle: "让AI成为核心资产",
-        color: "text-amber-500",
-        bg: "bg-amber-500/10",
-        border: "border-amber-500/20",
+        color: "text-purple-500",
+        bg: "bg-purple-500/10",
+        border: "border-purple-500/20",
         points: [
             {
                 label: "数据驱动优化",

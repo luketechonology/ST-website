@@ -14,40 +14,40 @@ const industries = [
         label: "医疗行业",
         tagline: "AI赋能精准医疗与健康管理",
         items: ["医学影像辅助诊断", "智能病历质控", "个性化健康管理"],
-        color: "from-red-500 to-orange-500",
-        bg: "bg-red-500/10",
-        text: "text-red-400",
-        border: "border-red-500/20",
+        color: "from-blue-500 to-cyan-400",
+        bg: "bg-blue-500/10",
+        text: "text-blue-400",
+        border: "border-blue-500/20",
     },
     {
         icon: ShoppingBag,
         label: "教育行业",
         tagline: "AI重构学校考试体系",
         items: ["AI智能出题", "智能组卷系统", "在线考试与监考", "AI自动阅卷", "数据分析与决策"],
-        color: "from-orange-500 to-amber-500",
-        bg: "bg-orange-500/10",
-        text: "text-orange-400",
-        border: "border-orange-500/20",
+        color: "from-violet-500 to-purple-400",
+        bg: "bg-violet-500/10",
+        text: "text-violet-400",
+        border: "border-violet-500/20",
     },
     {
         icon: Building2,
         label: "央国企",
         tagline: "沉淀组织智慧，保障运营安全",
         items: ["企业知识大脑", "智能公文处理", "舆情监控与风险预警"],
-        color: "from-red-600 to-red-400",
-        bg: "bg-red-600/10",
-        text: "text-red-400",
-        border: "border-red-600/20",
+        color: "from-purple-600 to-fuchsia-400",
+        bg: "bg-purple-500/10",
+        text: "text-purple-400",
+        border: "border-purple-500/20",
     },
     {
         icon: Wifi,
         label: "互联网",
         tagline: "驱动算法革新，定义智能体验",
         items: ["新一代智能推荐", "系统AIGC内容生态", "用户增长智能决策"],
-        color: "from-amber-500 to-yellow-500",
-        bg: "bg-amber-500/10",
-        text: "text-amber-400",
-        border: "border-amber-500/20",
+        color: "from-indigo-500 to-blue-400",
+        bg: "bg-indigo-500/10",
+        text: "text-indigo-400",
+        border: "border-indigo-500/20",
     },
 ];
 
@@ -81,10 +81,10 @@ export default function Architecture() {
                 {/* Three-pillar layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                     {/* ── Pillar 1: IDP ── */}
-                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-red-500/30 transition-colors group">
+                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-blue-500/30 transition-colors group">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
-                                <FileText className="w-5 h-5 text-red-400" />
+                            <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <FileText className="w-5 h-5 text-blue-400" />
                             </div>
                             <h3 className="text-xl font-bold text-white">IDP文档智能处理</h3>
                         </div>
@@ -93,7 +93,7 @@ export default function Architecture() {
                         </p>
                         <div className="grid grid-cols-4 gap-3">
                             {["PDF", "Word", "Excel", "PPT", "图片", "邮件", "网页", "扫描件"].map((type) => (
-                                <div key={type} className="bg-white/5 border border-white/10 rounded-lg px-2 py-2 text-center text-xs text-gray-300 hover:border-red-500/30 hover:text-red-300 transition-colors">
+                                <div key={type} className="bg-white/5 border border-white/10 rounded-lg px-2 py-2 text-center text-xs text-gray-300 hover:border-blue-500/30 hover:text-blue-300 transition-colors">
                                     {type}
                                 </div>
                             ))}
@@ -101,10 +101,10 @@ export default function Architecture() {
                     </div>
 
                     {/* ── Pillar 2: Agent Training ── */}
-                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-orange-500/30 transition-colors group">
+                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-purple-500/30 transition-colors group">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                                <Brain className="w-5 h-5 text-orange-400" />
+                            <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                                <Brain className="w-5 h-5 text-purple-400" />
                             </div>
                             <h3 className="text-xl font-bold text-white">智能体训练与编排</h3>
                         </div>
@@ -114,9 +114,9 @@ export default function Architecture() {
                                 { icon: Bot, name: "AI Agent", desc: "智能体编排" },
                                 { icon: Globe, name: "AI Hub", desc: "智能体门户" },
                             ].map((item) => (
-                                <div key={item.name} className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:border-orange-500/20 transition-colors">
-                                    <div className="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-                                        <item.icon className="w-4 h-4 text-orange-400" />
+                                <div key={item.name} className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:border-purple-500/20 transition-colors">
+                                    <div className="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                                        <item.icon className="w-4 h-4 text-purple-400" />
                                     </div>
                                     <div>
                                         <div className="text-white font-semibold text-sm">{item.name}</div>
@@ -138,10 +138,10 @@ export default function Architecture() {
                     </div>
 
                     {/* ── Pillar 3: Applications ── */}
-                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-red-500/30 transition-colors group">
+                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-fuchsia-500/30 transition-colors group">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
-                                <Sparkles className="w-5 h-5 text-red-400" />
+                            <div className="w-10 h-10 rounded-lg bg-fuchsia-500/10 flex items-center justify-center">
+                                <Sparkles className="w-5 h-5 text-fuchsia-400" />
                             </div>
                             <h3 className="text-xl font-bold text-white">智能体应用与落地</h3>
                         </div>
@@ -168,17 +168,17 @@ export default function Architecture() {
 
                 {/* ── Flow Arrows (visual connector) ── */}
                 <div className="hidden lg:flex justify-center items-center gap-4 mb-4 -mt-10">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-red-500/30 to-red-500/50"></div>
-                    <ChevronRight className="w-5 h-5 text-red-500/50" />
-                    <div className="flex-1 h-px bg-gradient-to-r from-red-500/50 via-orange-500/30 to-transparent"></div>
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-purple-500/50"></div>
+                    <ChevronRight className="w-5 h-5 text-purple-500/50" />
+                    <div className="flex-1 h-px bg-gradient-to-r from-purple-500/50 via-fuchsia-500/30 to-transparent"></div>
                 </div>
 
                 {/* ── Infrastructure Layer ── */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                     {infra.map((item) => (
-                        <div key={item.en} className="bg-white/[0.03] border border-white/10 rounded-xl p-5 text-center hover:border-red-500/30 transition-colors group">
-                            <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
-                                <item.icon className="w-5 h-5 text-red-400" />
+                        <div key={item.en} className="bg-white/[0.03] border border-white/10 rounded-xl p-5 text-center hover:border-blue-500/30 transition-colors group">
+                            <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                <item.icon className="w-5 h-5 text-blue-400" />
                             </div>
                             <div className="text-white font-semibold text-sm">{item.en}</div>
                             <div className="text-gray-500 text-xs mt-0.5">{item.zh}</div>

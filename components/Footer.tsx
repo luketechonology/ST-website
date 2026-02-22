@@ -8,7 +8,7 @@ export default function Footer() {
                     <div className="text-center md:text-left">
                         <h3 className="text-xl font-bold text-white mb-2">圣唐科技</h3>
                         <p className="text-gray-400 text-sm">
-                            用AI重构学校考试体系
+                            用AI赋能企事业单位
                         </p>
                     </div>
 

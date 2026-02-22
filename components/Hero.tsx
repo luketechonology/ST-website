@@ -21,8 +21,8 @@ export default function Hero() {
                 </div>
 
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                    <span className="block text-white mb-2">所有的软件应用</span>
-                    <span className="block text-white">都值得用<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-fuchsia-500">AI重写</span></span>
+                    <span className="block text-white mb-2">所有的行业</span>
+                    <span className="block text-white">都能被<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-fuchsia-500">AI赋能</span></span>
                 </h1>
 
                 <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">

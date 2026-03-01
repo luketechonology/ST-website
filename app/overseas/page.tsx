@@ -257,7 +257,7 @@ export default function OverseasPage() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
                         {[
                             { step: "01", title: "出海评估", desc: "AI智能分析市场可行性、竞争态势、合规要求", icon: Search },
-                            { step: "02", title: "产品改造", desc: "本地化UI、合规文档、定价策略、文案优化", icon: PenTool },
+                            { step: "02", title: "产品本地化", desc: "基于北美用户行为模型与监管体系，重构产品体验、商业逻辑与合规架构", icon: PenTool },
                             { step: "03", title: "合规落地", desc: "公司注册、SOC2认证、税务合规、架构部署", icon: Shield },
                             { step: "04", title: "增长获客", desc: "SEO优化、LinkedIn触达、销售漏斗、渠道拓展", icon: Rocket },
                         ].map((item, i) => (

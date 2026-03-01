@@ -78,6 +78,21 @@ const platformModules = [
 
 const pricingPlans = [
     {
+        name: "个人会员",
+        price: "$99",
+        period: "/年",
+        description: "适合独立开发者与个人创作者出海",
+        features: [
+            "出海评估报告（每月3次）",
+            "基础本地化工具使用",
+            "隐私政策 & Terms 生成",
+            "定价换算工具",
+            "邮件支持",
+        ],
+        highlight: false,
+        cta: "开始出海之旅",
+    },
+    {
         name: "基础会员",
         price: "$999",
         period: "/年",
@@ -289,7 +304,7 @@ export default function OverseasPage() {
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">会员方案</h2>
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto">从探索到全面出海，选择适合您的方案</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                         {pricingPlans.map((plan) => (
                             <div
                                 key={plan.name}

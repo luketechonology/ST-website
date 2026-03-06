@@ -1,9 +1,7 @@
-import { CheckCircle2, Cpu, Wrench, Download, Settings, Server } from "lucide-react";
+"use client";
 
-export const metadata = {
-    title: 'AI工具 | 北京圣唐科技有限公司',
-    description: '专业的AI编程工具、OpenClaw安装与本地部署服务。',
-};
+import { CheckCircle2, Cpu, Wrench, Download, Settings, Server, X } from "lucide-react";
+import { useState } from "react";
 
 const services = [
     {
@@ -20,6 +18,7 @@ const services = [
         ],
         highlight: false,
         cta: "免费获取",
+        isContactTrigger: false,
     },
     {
         name: "OpenClaw 协助安装",
@@ -34,7 +33,8 @@ const services = [
             "常见安装问题排查",
         ],
         highlight: true,
-        cta: "立即购买",
+        cta: "立即咨询",
+        isContactTrigger: true,
     },
     {
         name: "OpenClaw 本地部署",
@@ -52,10 +52,39 @@ const services = [
         ],
         highlight: false,
         cta: "预约部署",
+        isContactTrigger: true,
     },
 ];
 
 export default function AIToolsPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedService, setSelectedService] = useState("");
+
+    // Form state
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        wechat: ""
+    });
+
+    const handleOpenModal = (serviceName: string) => {
+        setSelectedService(serviceName);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setFormData({ name: "", phone: "", wechat: "" });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Here you would typically send the data to your backend API
+        console.log("Form submitted for", selectedService, formData);
+        handleCloseModal();
+        alert("提交成功！我们会尽快与您联系。");
+    };
+
     return (
         <main className="min-h-screen text-white pt-20">
             {/* ━━━ Hero ━━━ */}
@@ -123,19 +152,106 @@ export default function AIToolsPage() {
                                     ))}
                                 </ul>
 
-                                <a href="#contact" className="mt-auto block">
-                                    <button className={`w-full py-4 rounded-xl font-bold transition-all ${service.highlight
-                                        ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-0.5'
-                                        : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
-                                        }`}>
-                                        {service.cta}
-                                    </button>
-                                </a>
+                                <div className="mt-auto block">
+                                    {service.isContactTrigger ? (
+                                        <button
+                                            onClick={() => handleOpenModal(service.name)}
+                                            className={`w-full py-4 rounded-xl font-bold transition-all cursor-pointer ${service.highlight
+                                                ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-0.5'
+                                                : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                                                }`}>
+                                            {service.cta}
+                                        </button>
+                                    ) : (
+                                        <a href="#contact" className="w-full inline-block">
+                                            <button className="w-full py-4 rounded-xl font-bold transition-all bg-white/5 text-white hover:bg-white/10 border border-white/10">
+                                                {service.cta}
+                                            </button>
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+
+            {/* ━━━ Contact Modal ━━━ */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    {/* Backdrop */}
+                    <div
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+                        onClick={handleCloseModal}
+                    ></div>
+
+                    {/* Modal Content */}
+                    <div className="relative bg-[#0a0a0a] border border-white/10 rounded-2xl w-full max-w-md p-6 shadow-2xl z-10 animate-in fade-in zoom-in-95 duration-200">
+                        <button
+                            onClick={handleCloseModal}
+                            className="absolute right-4 top-4 text-gray-400 hover:text-white transition-colors"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+
+                        <h3 className="text-2xl font-bold text-white mb-2">预约服务</h3>
+                        <p className="text-gray-400 text-sm mb-6">您选择的服务：<span className="text-blue-400 font-medium">{selectedService}</span></p>
+
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                                    姓名 <span className="text-red-400">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    required
+                                    value={formData.name}
+                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500"
+                                    placeholder="您的称呼"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+                                    电话号码 <span className="text-red-400">*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    required
+                                    value={formData.phone}
+                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500"
+                                    placeholder="您的联系电话"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="wechat" className="block text-sm font-medium text-gray-300 mb-1">
+                                    微信号 <span className="text-gray-500 font-normal text-xs ml-1">(选填)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="wechat"
+                                    value={formData.wechat}
+                                    onChange={(e) => setFormData({ ...formData, wechat: e.target.value })}
+                                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500"
+                                    placeholder="您的微信号"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full py-3 mt-6 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors shadow-lg shadow-blue-500/20"
+                            >
+                                提交预约
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }

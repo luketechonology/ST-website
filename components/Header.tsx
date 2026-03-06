@@ -45,6 +45,7 @@ export default function Header() {
                     </div>
 
                     <Link href="/overseas" className="hover:text-white transition-colors">出海服务（北美市场）</Link>
+                    <Link href="/ai-tools" className="hover:text-white transition-colors">AI工具</Link>
 
                 </nav>
 

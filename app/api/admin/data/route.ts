@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { getDemoData, getSolutionData } from '@/lib/db';
+import { getDemoData, getSolutionData, getAiToolsData } from '@/lib/db';
 
 export async function GET() {
     const cookieStore = await cookies();
@@ -13,14 +13,17 @@ export async function GET() {
     try {
         const demoData = getDemoData();
         const solutionData = getSolutionData();
+        const aiToolsData = getAiToolsData();
 
         // Sort by createdAt descending
         demoData.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
         solutionData.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        aiToolsData.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
         return NextResponse.json({
             demo: demoData,
-            solution: solutionData
+            solution: solutionData,
+            aiTools: aiToolsData
         });
     } catch (error) {
         return NextResponse.json({ message: 'Error fetching data' }, { status: 500 });

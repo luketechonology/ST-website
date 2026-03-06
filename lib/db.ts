@@ -74,3 +74,25 @@ export function savePrivacyContent(content: string) {
     const filePath = path.join(DATA_DIR, 'privacy.json');
     fs.writeFileSync(filePath, JSON.stringify({ content }, null, 2));
 }
+
+export function getAiToolsData() {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'ai-tools.json');
+    if (!fs.existsSync(filePath)) {
+        return [];
+    }
+    const fileData = fs.readFileSync(filePath, 'utf-8');
+    try {
+        return JSON.parse(fileData);
+    } catch (e) {
+        return [];
+    }
+}
+
+export function saveAiToolsData(data: any) {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'ai-tools.json');
+    const currentData = getAiToolsData();
+    currentData.push(data);
+    fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
+}

@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { useRouter } from 'next/navigation';
 
 export default function DashboardTabs() {
-    const [activeTab, setActiveTab] = useState<'overseas' | 'demo' | 'solution' | 'privacy'>('overseas');
-    const [data, setData] = useState<{ demo: any[], solution: any[] }>({ demo: [], solution: [] });
+    const [activeTab, setActiveTab] = useState<'overseas' | 'demo' | 'solution' | 'aiTools' | 'privacy'>('overseas');
+    const [data, setData] = useState<{ demo: any[], solution: any[], aiTools: any[] }>({ demo: [], solution: [], aiTools: [] });
     const [loading, setLoading] = useState(true);
     const [privacyContent, setPrivacyContent] = useState('');
     const [savingPrivacy, setSavingPrivacy] = useState(false);
@@ -93,6 +93,12 @@ export default function DashboardTabs() {
                     建设方案 ({data.solution.length})
                 </button>
                 <button
+                    onClick={() => setActiveTab('aiTools')}
+                    className={`px-6 py-3 font-medium transition-colors ${activeTab === 'aiTools' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                    AI工具预约 ({data.aiTools?.length || 0})
+                </button>
+                <button
                     onClick={() => setActiveTab('privacy')}
                     className={`px-6 py-3 font-medium transition-colors ${activeTab === 'privacy' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
                 >
@@ -137,6 +143,14 @@ export default function DashboardTabs() {
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">职务</th>
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">规模</th>
                                         </>
+                                    ) : activeTab === 'aiTools' ? (
+                                        <>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">时间</th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">预约服务</th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">姓名</th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">电话</th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">微信</th>
+                                        </>
                                     ) : (
                                         <>
                                             <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">时间</th>
@@ -175,6 +189,20 @@ export default function DashboardTabs() {
                                                 <td className="px-6 py-4 whitespace-nowrap">{item.size}</td>
                                             </tr>
                                         ))
+                                ) : activeTab === 'aiTools' ? (
+                                    data.aiTools?.map((item: any) => (
+                                        <tr key={item.id} className="hover:bg-slate-50">
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{formatDate(item.createdAt)}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-cyan-100 text-cyan-800">
+                                                    {item.service}
+                                                </span>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap font-medium">{item.name}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">{item.phone}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{item.wechat || '-'}</td>
+                                        </tr>
+                                    ))
                                 ) : (
                                     data.solution.map((item: any) => (
                                         <tr key={item.id} className="hover:bg-slate-50">
@@ -197,6 +225,7 @@ export default function DashboardTabs() {
                                 )}
                                 {((activeTab === 'overseas' && data.demo.filter(d => d.industry === '出海服务').length === 0) ||
                                     (activeTab === 'demo' && data.demo.filter(d => d.industry !== '出海服务').length === 0) ||
+                                    (activeTab === 'aiTools' && (!data.aiTools || data.aiTools.length === 0)) ||
                                     (activeTab === 'solution' && data.solution.length === 0)) && (
                                         <tr>
                                             <td colSpan={7} className="px-6 py-8 text-center text-slate-400">暂无数据</td>

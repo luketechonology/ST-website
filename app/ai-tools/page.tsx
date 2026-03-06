@@ -77,12 +77,36 @@ export default function AIToolsPage() {
         setFormData({ name: "", phone: "", wechat: "" });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically send the data to your backend API
-        console.log("Form submitted for", selectedService, formData);
-        handleCloseModal();
-        alert("提交成功！我们会尽快与您联系。");
+        setIsSubmitting(true);
+
+        try {
+            const res = await fetch('/api/ai-tools', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    service: selectedService,
+                }),
+            });
+
+            if (res.ok) {
+                alert("提交成功！我们会尽快与您联系。");
+                handleCloseModal();
+            } else {
+                alert("提交失败，请稍后重试。");
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert("发生错误，请稍后重试。");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -244,9 +268,10 @@ export default function AIToolsPage() {
 
                             <button
                                 type="submit"
-                                className="w-full py-3 mt-6 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors shadow-lg shadow-blue-500/20"
+                                disabled={isSubmitting}
+                                className={`w-full py-3 mt-6 text-white font-bold rounded-lg transition-colors shadow-lg ${isSubmitting ? 'bg-blue-600/50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/20'}`}
                             >
-                                提交预约
+                                {isSubmitting ? '提交中...' : '提交预约'}
                             </button>
                         </form>
                     </div>

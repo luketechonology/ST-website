@@ -1,10 +1,7 @@
 import { notFound } from "next/navigation";
 import { industries } from "@/data/industries";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import IndustryHero from "@/components/industry/IndustryHero";
 import IndustryContent from "@/components/industry/IndustryContent";
-import DemoHero from "@/components/demo/DemoHero";
 import DemoForm from "@/components/demo/DemoForm";
 
 // Helper function to get params safely

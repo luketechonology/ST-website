@@ -1,23 +1,48 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Button } from "@/components/ui/Button";
 import { useRouter } from 'next/navigation';
 
+interface DemoItem {
+    id: string;
+    createdAt: string;
+    industry: string;
+    school: string;
+    name: string;
+    phone: string;
+    role: string;
+    size: string;
+}
+
+interface SolutionItem {
+    id: string;
+    createdAt: string;
+    grade: string;
+    school: string;
+    name: string;
+    phone: string;
+    goals: string[];
+}
+
+interface AiToolItem {
+    id: string;
+    createdAt: string;
+    service: string;
+    name: string;
+    phone: string;
+    wechat?: string;
+}
+
 export default function DashboardTabs() {
     const [activeTab, setActiveTab] = useState<'overseas' | 'demo' | 'solution' | 'aiTools' | 'privacy'>('overseas');
-    const [data, setData] = useState<{ demo: any[], solution: any[], aiTools: any[] }>({ demo: [], solution: [], aiTools: [] });
+    const [data, setData] = useState<{ demo: DemoItem[], solution: SolutionItem[], aiTools: AiToolItem[] }>({ demo: [], solution: [], aiTools: [] });
     const [loading, setLoading] = useState(true);
     const [privacyContent, setPrivacyContent] = useState('');
     const [savingPrivacy, setSavingPrivacy] = useState(false);
     const router = useRouter();
 
-    useEffect(() => {
-        fetchData();
-        fetchPrivacy();
-    }, []);
-
-    async function fetchData() {
+    const fetchData = useCallback(async () => {
         try {
             const res = await fetch('/api/admin/data');
             if (res.status === 401) {
@@ -26,24 +51,29 @@ export default function DashboardTabs() {
             }
             const json = await res.json();
             setData(json);
-        } catch (e) {
+        } catch {
             console.error('Failed to fetch data');
         } finally {
             setLoading(false);
         }
-    }
+    }, [router]);
 
-    async function fetchPrivacy() {
+    const fetchPrivacy = useCallback(async () => {
         try {
             const res = await fetch('/api/admin/privacy');
             if (res.ok) {
                 const json = await res.json();
                 if (json.content) setPrivacyContent(json.content);
             }
-        } catch (e) {
+        } catch {
             console.error('Failed to fetch privacy content');
         }
-    }
+    }, []);
+
+    useEffect(() => {
+        fetchData();
+        fetchPrivacy();
+    }, [fetchData, fetchPrivacy]);
 
     async function handleSavePrivacy() {
         setSavingPrivacy(true);
@@ -58,7 +88,7 @@ export default function DashboardTabs() {
             } else {
                 alert('更新失败');
             }
-        } catch (e) {
+        } catch {
             alert('更新出错');
         } finally {
             setSavingPrivacy(false);
@@ -167,7 +197,7 @@ export default function DashboardTabs() {
                                 {activeTab === 'demo' || activeTab === 'overseas' ? (
                                     data.demo
                                         .filter(item => activeTab === 'overseas' ? item.industry === '出海服务' : item.industry !== '出海服务')
-                                        .map((item: any) => (
+                                        .map((item: DemoItem) => (
                                             <tr key={item.id} className="hover:bg-slate-50">
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{formatDate(item.createdAt)}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
@@ -190,7 +220,7 @@ export default function DashboardTabs() {
                                             </tr>
                                         ))
                                 ) : activeTab === 'aiTools' ? (
-                                    data.aiTools?.map((item: any) => (
+                                    data.aiTools?.map((item: AiToolItem) => (
                                         <tr key={item.id} className="hover:bg-slate-50">
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{formatDate(item.createdAt)}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">
@@ -204,7 +234,7 @@ export default function DashboardTabs() {
                                         </tr>
                                     ))
                                 ) : (
-                                    data.solution.map((item: any) => (
+                                    data.solution.map((item: SolutionItem) => (
                                         <tr key={item.id} className="hover:bg-slate-50">
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{formatDate(item.createdAt)}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">

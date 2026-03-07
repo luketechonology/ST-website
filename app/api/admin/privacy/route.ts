@@ -31,7 +31,7 @@ export async function GET() {
     try {
         const content = getPrivacyContent();
         return NextResponse.json({ content: content || '' });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ message: 'Error fetching content' }, { status: 500 });
     }
 }

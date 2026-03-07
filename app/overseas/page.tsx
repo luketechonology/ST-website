@@ -1,8 +1,8 @@
 import {
-    Globe, Rocket, Shield, BarChart3, Users, Building2,
+    Globe, Rocket, Shield, Users, Building2,
     Search, FileText, TrendingUp, Target, Zap,
-    CheckCircle2, ArrowRight, Star, Network, Mail,
-    Award, MapPin, Lock, Languages, PenTool, ChevronRight, Layers
+    CheckCircle2, ArrowRight, Star, Network,
+    Award, MapPin, Languages, PenTool, ChevronRight, Layers
 } from "lucide-react";
 import DemoForm from "@/components/demo/DemoForm";
 

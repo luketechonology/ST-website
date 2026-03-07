@@ -1,4 +1,4 @@
-import { FileText, Stethoscope, HardHat, Pickaxe, CheckCircle, BarChart2, Shield, Activity, Truck } from "lucide-react";
+import { FileText, BarChart2, Shield } from "lucide-react";
 
 export const industries = [
     {

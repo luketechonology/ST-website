@@ -18,12 +18,12 @@ export function getDemoData() {
     const fileData = fs.readFileSync(filePath, 'utf-8');
     try {
         return JSON.parse(fileData);
-    } catch (e) {
+    } catch {
         return [];
     }
 }
 
-export function saveDemoData(data: any) {
+export function saveDemoData(data: unknown) {
     ensureDataDir();
     const filePath = path.join(DATA_DIR, 'demo.json');
     const currentData = getDemoData();
@@ -40,12 +40,12 @@ export function getSolutionData() {
     const fileData = fs.readFileSync(filePath, 'utf-8');
     try {
         return JSON.parse(fileData);
-    } catch (e) {
+    } catch {
         return [];
     }
 }
 
-export function saveSolutionData(data: any) {
+export function saveSolutionData(data: unknown) {
     ensureDataDir();
     const filePath = path.join(DATA_DIR, 'solution.json');
     const currentData = getSolutionData();
@@ -64,7 +64,7 @@ export function getPrivacyContent() {
     try {
         const json = JSON.parse(fileData);
         return json.content;
-    } catch (e) {
+    } catch {
         return null;
     }
 }
@@ -84,12 +84,12 @@ export function getAiToolsData() {
     const fileData = fs.readFileSync(filePath, 'utf-8');
     try {
         return JSON.parse(fileData);
-    } catch (e) {
+    } catch {
         return [];
     }
 }
 
-export function saveAiToolsData(data: any) {
+export function saveAiToolsData(data: unknown) {
     ensureDataDir();
     const filePath = path.join(DATA_DIR, 'ai-tools.json');
     const currentData = getAiToolsData();

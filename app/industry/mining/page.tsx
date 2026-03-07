@@ -10,10 +10,8 @@ import {
     Wind,
     ArrowRight,
     ChevronRight,
-    CheckCircle2,
     TrendingUp,
     TrendingDown,
-    Zap,
     Eye,
     Radio,
     Cpu,
@@ -27,8 +25,6 @@ import {
     Network,
     BarChart3,
     Users,
-    Factory,
-    Mountain,
     CircleDot,
     Layers,
     Wrench,
@@ -38,7 +34,6 @@ import {
     Radar,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import DemoForm from "@/components/demo/DemoForm";
 
 /* ─── Animated Counter ─── */
@@ -218,7 +213,7 @@ export default function MiningPage() {
                     <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
                         深度融合人工智能技术，全面推动矿山数字化、智能化转型
                         <br />
-                        助您迈入<span className="text-white font-medium">"少人化、无人化"</span>的高效开采新时代
+                        助您迈入<span className="text-white font-medium">&quot;少人化、无人化&quot;</span>的高效开采新时代
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-4">

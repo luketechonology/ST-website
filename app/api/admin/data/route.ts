@@ -16,16 +16,16 @@ export async function GET() {
         const aiToolsData = getAiToolsData();
 
         // Sort by createdAt descending
-        demoData.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-        solutionData.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-        aiToolsData.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        demoData.sort((a: Record<string, unknown>, b: Record<string, unknown>) => new Date(b.createdAt as string).getTime() - new Date(a.createdAt as string).getTime());
+        solutionData.sort((a: Record<string, unknown>, b: Record<string, unknown>) => new Date(b.createdAt as string).getTime() - new Date(a.createdAt as string).getTime());
+        aiToolsData.sort((a: Record<string, unknown>, b: Record<string, unknown>) => new Date(b.createdAt as string).getTime() - new Date(a.createdAt as string).getTime());
 
         return NextResponse.json({
             demo: demoData,
             solution: solutionData,
             aiTools: aiToolsData
         });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ message: 'Error fetching data' }, { status: 500 });
     }
 }

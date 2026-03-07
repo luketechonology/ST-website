@@ -1,4 +1,3 @@
-import { FileText, Database, Layers, TrendingUp } from "lucide-react";
 
 export default function BlueprintValue() {
     const contents = [

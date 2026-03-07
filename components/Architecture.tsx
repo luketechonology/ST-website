@@ -1,8 +1,7 @@
 import {
     FileText, Brain, Bot, Globe, Server, Network, Eye, Users,
     Factory, ShoppingBag, Building2, Wifi,
-    ScanSearch, Wrench, BarChart3, MapPin, Package, TrendingUp,
-    BookOpen, FileCheck, Shield, Sparkles, Layers, Radio,
+    BookOpen, Sparkles,
     ChevronRight
 } from "lucide-react";
 

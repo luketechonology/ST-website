@@ -18,7 +18,7 @@ export default function SolutionForm() {
 
         // Handle checkboxes for goals
         const goals = formData.getAll('goals');
-        // @ts-ignore - Simple bypass for demo purpose
+        // @ts-expect-error - Simple bypass for demo purpose
         data.goals = goals;
 
         try {

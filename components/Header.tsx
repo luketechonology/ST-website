@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from "@/components/ui/Button";
 import { Menu, ChevronDown } from "lucide-react";
 import { industries } from "@/data/industries";

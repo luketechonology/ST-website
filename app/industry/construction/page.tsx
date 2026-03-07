@@ -11,7 +11,6 @@ import {
     FileText,
     Ruler,
     Layers,
-    ArrowRight,
     ChevronRight,
     CheckCircle2,
     TrendingUp,
@@ -27,11 +26,8 @@ import {
     Headphones,
     Server,
     Lock,
-    Network,
     Brain,
     Boxes,
-    Hammer,
-    Zap,
     CircleDot,
     Package,
     Construction,
@@ -39,7 +35,6 @@ import {
     Factory,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import DemoForm from "@/components/demo/DemoForm";
 
 /* ─── Animated Counter ─── */

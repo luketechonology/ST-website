@@ -13,13 +13,8 @@ import {
     Building2,
     Hospital,
     Stethoscope,
-    ArrowRight,
     ChevronRight,
-    Zap,
-    BarChart3,
-    Clock,
     CheckCircle2,
-    Sparkles,
     Network,
     MessageSquare,
     Search,
@@ -29,7 +24,6 @@ import {
     TrendingUp,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import DemoForm from "@/components/demo/DemoForm";
 
 /* ─── Animated Counter ─── */

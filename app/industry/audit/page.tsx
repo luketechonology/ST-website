@@ -1,4 +1,4 @@
-import { FileText, Shield, BarChart2, Search, Users, Building, Landmark, Scale, BadgeCheck, AlertTriangle, TrendingUp, ClipboardCheck, Receipt, ShoppingCart, GitBranch, Eye, Database, Layers } from "lucide-react";
+import { FileText, Shield, TrendingUp, ClipboardCheck, Receipt, ShoppingCart } from "lucide-react";
 import DemoForm from "@/components/demo/DemoForm";
 
 export const metadata = {

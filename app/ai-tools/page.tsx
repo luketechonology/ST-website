@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Cpu, Wrench, Download, Settings, Server, X } from "lucide-react";
+import { CheckCircle2, Cpu, Wrench, Download, Server, X } from "lucide-react";
 import { useState } from "react";
 
 const services = [

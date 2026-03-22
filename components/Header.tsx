@@ -15,6 +15,7 @@ export default function Header() {
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
                     <Link href="/" className="hover:text-white transition-colors">首页</Link>
+                    <Link href="/#honors" className="hover:text-white transition-colors py-4">企业荣誉</Link>
                     {/* Dropdown for Solutions */}
                     <div className="relative group">
                         <button className="flex items-center gap-1 hover:text-white transition-colors py-4">
@@ -46,7 +47,6 @@ export default function Header() {
                         </div>
                     </div>
 
-                    <Link href="/#honors" className="hover:text-white transition-colors">企业荣誉</Link>
                     <Link href="/overseas" className="hover:text-white transition-colors">出海服务（北美市场）</Link>
                     <Link href="/ai-tools" className="hover:text-white transition-colors">AI工具</Link>
 

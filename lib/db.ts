@@ -96,3 +96,55 @@ export function saveAiToolsData(data: unknown) {
     currentData.push(data);
     fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
 }
+
+// Honors Data Management
+export interface HonorItem {
+    id: string;
+    title: string;
+    imageUrl: string;
+    createdAt: string;
+}
+
+export function getHonorsData(): HonorItem[] {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'honors.json');
+    if (!fs.existsSync(filePath)) {
+        return [];
+    }
+    const fileData = fs.readFileSync(filePath, 'utf-8');
+    try {
+        return JSON.parse(fileData);
+    } catch {
+        return [];
+    }
+}
+
+export function saveHonorData(data: HonorItem) {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'honors.json');
+    const currentData = getHonorsData();
+    // Add to the beginning of the list to show newest first
+    currentData.unshift(data);
+    fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
+}
+
+export function updateHonorData(id: string, updatedData: Partial<HonorItem>) {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'honors.json');
+    let currentData = getHonorsData();
+    currentData = currentData.map(item => item.id === id ? { ...item, ...updatedData } : item);
+    fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
+}
+
+export function deleteHonorData(id: string) {
+    ensureDataDir();
+    const filePath = path.join(DATA_DIR, 'honors.json');
+    let currentData = getHonorsData();
+    const honorToDelete = currentData.find(item => item.id === id);
+    if (honorToDelete) {
+        // Optionally, we could attempt to delete the image file from public/uploads/honors here
+        // But for safety and simplicity, we'll just remove the data entry for now.
+    }
+    currentData = currentData.filter(item => item.id !== id);
+    fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
+}

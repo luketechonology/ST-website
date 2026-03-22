@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Methodology from "@/components/Methodology";
 import Architecture from "@/components/Architecture";
+import Honors from "@/components/Honors";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Methodology />
       <Architecture />
+      <Honors />
     </div>
   );
 }

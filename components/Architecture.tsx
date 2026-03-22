@@ -10,6 +10,16 @@ import {
 const industries = [
     {
         icon: Factory,
+        label: "仓储物流管理",
+        tagline: "以协同打破数据孤岛",
+        items: ["多仓网络协同", "全渠道订单聚合", "智能波次规划", "尾程物流比价"],
+        color: "from-emerald-500 to-teal-400",
+        bg: "bg-emerald-500/10",
+        text: "text-emerald-400",
+        border: "border-emerald-500/20",
+    },
+    {
+        icon: Factory,
         label: "医疗行业",
         tagline: "AI赋能精准医疗与健康管理",
         items: ["医学影像辅助诊断", "智能病历质控", "个性化健康管理"],

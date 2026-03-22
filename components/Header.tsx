@@ -22,6 +22,9 @@ export default function Header() {
                         </button>
                         <div className="absolute left-1/2 -translate-x-1/2 top-full w-56 bg-black/90 border border-white/10 rounded-lg shadow-xl backdrop-blur-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top pt-2">
                             <div className="flex flex-col py-2">
+                                <Link href="/industry/logistics" className="px-4 py-2 hover:bg-brand-blue/20 hover:text-brand-blue transition-colors text-left">
+                                    仓储物流管理系统
+                                </Link>
                                 <Link href="/industry/education" className="px-4 py-2 hover:bg-brand-blue/20 hover:text-brand-blue transition-colors text-left">
                                     AI+教育
                                 </Link>
@@ -43,6 +46,7 @@ export default function Header() {
                         </div>
                     </div>
 
+                    <Link href="/#honors" className="hover:text-white transition-colors">企业荣誉</Link>
                     <Link href="/overseas" className="hover:text-white transition-colors">出海服务（北美市场）</Link>
                     <Link href="/ai-tools" className="hover:text-white transition-colors">AI工具</Link>
 

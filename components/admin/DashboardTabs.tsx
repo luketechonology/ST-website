@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from "@/components/ui/Button";
 import { useRouter } from 'next/navigation';
+import HonorsManager from './HonorsManager';
 
 interface DemoItem {
     id: string;
@@ -35,7 +36,7 @@ interface AiToolItem {
 }
 
 export default function DashboardTabs() {
-    const [activeTab, setActiveTab] = useState<'overseas' | 'demo' | 'solution' | 'aiTools' | 'privacy'>('overseas');
+    const [activeTab, setActiveTab] = useState<'overseas' | 'demo' | 'solution' | 'aiTools' | 'privacy' | 'honors'>('overseas');
     const [data, setData] = useState<{ demo: DemoItem[], solution: SolutionItem[], aiTools: AiToolItem[] }>({ demo: [], solution: [], aiTools: [] });
     const [loading, setLoading] = useState(true);
     const [privacyContent, setPrivacyContent] = useState('');
@@ -134,6 +135,12 @@ export default function DashboardTabs() {
                 >
                     隐私政策管理
                 </button>
+                <button
+                    onClick={() => setActiveTab('honors')}
+                    className={`px-6 py-3 font-medium transition-colors ${activeTab === 'honors' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                    企业荣誉管理
+                </button>
             </div>
 
             <div className="bg-white rounded-lg shadow overflow-hidden border border-slate-200">
@@ -158,6 +165,8 @@ export default function DashboardTabs() {
                             </Button>
                         </div>
                     </div>
+                ) : activeTab === 'honors' ? (
+                    <HonorsManager />
                 ) : (
                     <div className="overflow-x-auto">
                         <table className="min-w-full divide-y divide-slate-200">
@@ -204,6 +213,7 @@ export default function DashboardTabs() {
                                                     <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${item.industry === '出海服务' ? 'bg-fuchsia-100 text-fuchsia-800' :
                                                         item.industry === '建筑工程' ? 'bg-amber-100 text-amber-800' :
                                                             item.industry === '采矿工程' ? 'bg-emerald-100 text-emerald-800' :
+                                                                item.industry === '仓储物流' ? 'bg-teal-100 text-teal-800' :
                                                                 item.industry === '审计' ? 'bg-blue-100 text-blue-800' :
                                                                     item.industry === '教育' ? 'bg-purple-100 text-purple-800' :
                                                                         item.industry === '医疗' ? 'bg-rose-100 text-rose-800' :

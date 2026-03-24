@@ -1,5 +1,5 @@
 import { getHonorsData } from "@/lib/db";
-import Image from "next/image";
+import HonorsGrid from "./HonorsGrid";
 
 export default function Honors() {
     const honors = getHonorsData();
@@ -24,26 +24,7 @@ export default function Honors() {
                     <div className="absolute left-1/2 -bottom-6 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    {honors.map((honor) => (
-                        <div 
-                            key={honor.id} 
-                            className="group relative bg-white/[0.03] border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-2"
-                        >
-                            <div className="aspect-[4/3] w-full relative mb-6 bg-white/5 flex items-center justify-center rounded-xl overflow-hidden group-hover:bg-white/10 transition-colors">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    src={honor.imageUrl}
-                                    alt={honor.title}
-                                    className="max-w-full max-h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110"
-                                />
-                            </div>
-                            <h3 className="text-lg font-bold text-white text-center line-clamp-2 group-hover:text-blue-400 transition-colors">
-                                {honor.title}
-                            </h3>
-                        </div>
-                    ))}
-                </div>
+                <HonorsGrid honors={honors} />
             </div>
         </section>
     );

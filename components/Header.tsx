@@ -32,6 +32,9 @@ export default function Header() {
                                 <Link href="/industry/logistics" className="px-4 py-2 hover:bg-brand-blue/20 hover:text-brand-blue transition-colors text-left">
                                     仓储物流管理系统
                                 </Link>
+                                <Link href="/industry/enterprise-agent" className="px-4 py-2 hover:bg-brand-blue/20 hover:text-brand-blue transition-colors text-left">
+                                    AI智能体企业转型方案
+                                </Link>
                                 <Link href="/industry/education" className="px-4 py-2 hover:bg-brand-blue/20 hover:text-brand-blue transition-colors text-left">
                                     AI+教育
                                 </Link>
@@ -107,6 +110,7 @@ export default function Header() {
                             {isMobileSolutionsOpen && (
                                 <div className="flex flex-col pl-4 mt-3 gap-3 text-sm text-gray-400">
                                     <Link href="/industry/logistics" onClick={() => setIsMobileMenuOpen(false)}>仓储物流管理系统</Link>
+                                    <Link href="/industry/enterprise-agent" onClick={() => setIsMobileMenuOpen(false)}>AI智能体企业转型方案</Link>
                                     <Link href="/industry/education" onClick={() => setIsMobileMenuOpen(false)}>AI+教育</Link>
                                     <Link href="/industry/medical" onClick={() => setIsMobileMenuOpen(false)}>AI+医疗</Link>
                                     <Link href="/industry/construction" onClick={() => setIsMobileMenuOpen(false)}>AI+建筑工程</Link>

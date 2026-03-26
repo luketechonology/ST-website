@@ -12,8 +12,11 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="flex gap-8 text-sm text-gray-400">
+                    <div className="flex items-center gap-8 text-sm text-gray-400">
                         <Link href="/privacy" className="hover:text-brand-blue transition-colors">隐私政策</Link>
+                        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-blue transition-colors">
+                            京ICP备2022006405号-2
+                        </a>
                     </div>
 
                     <div className="text-gray-500 text-sm">
